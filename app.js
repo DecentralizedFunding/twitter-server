@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
+var imageRouter = require('./routes/image');
 var tweetRouter = require('./routes/tweet');
 
 var app = express();
@@ -26,6 +27,7 @@ app.use(function(req, res, next) {
 })
 
 app.use('/', indexRouter);
+app.use('/image', imageRouter);
 app.use('/tweet', tweetRouter);
 
 // catch 404 and forward to error handler
